@@ -26,7 +26,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-pnn!&o&q1=y_-10jf6nv^ne$gy2!912+p*=sxh_9d-ytl^zrip'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = []
 
@@ -159,3 +159,9 @@ EMAIL_HOST_USER = 'smitjethwa20@gmail.com'
 EMAIL_HOST_PASSWORD = '8yVAh4FqDU2SRfOx'
 EMAIL_USE_TLS = True
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
+
+try: 
+    from .local_settings import *
+except ImportError:
+    pass
